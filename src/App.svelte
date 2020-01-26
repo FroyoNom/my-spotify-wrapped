@@ -27,6 +27,15 @@
   .fa-github {
     color: #fff;
   }
+
+  .fa-github {
+    margin-left: 1rem;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
 <div id="container">
