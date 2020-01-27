@@ -55,7 +55,7 @@
   <footer>
     <p class="name">©2020 Simon Olsen</p>
 
-    <a href="https://github.com/FroyoNom">
+    <a target="_blank" href="https://github.com/FroyoNom">
       <i class="fab fa-github" />
     </a>
 
