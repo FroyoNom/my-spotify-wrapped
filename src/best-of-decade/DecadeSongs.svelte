@@ -1,3 +1,44 @@
+<script>
+  export let songs = [
+    {
+      class: "super-driver",
+      image: {
+        src: "https://i.ibb.co/WWQRsds/1371186264-Booklet-01.jpg",
+        alt: "Super Driver Cover"
+      },
+      name: "Super Driver",
+      artists: "Aya Hirano"
+    },
+    {
+      class: "polaroid",
+      image: {
+        src: "https://i.ibb.co/TTb9kKq/fd98c51048e2baede0a40b3c60e73f58.jpg",
+        alt: "Polaroid Album Cover"
+      },
+      name: "Polaroid",
+      artists: "Imagine Dragons"
+    },
+    {
+      class: "beachan",
+      image: {
+        src: "https://i.ibb.co/r3Hc560/81-MLV40y-J8-L-SS500.jpg",
+        alt: "Beachan-Robot Cover"
+      },
+      name: "Beachan-Robot",
+      artists: "Lady-Baby"
+    },
+    {
+      class: "kick-me",
+      image: {
+        src: "https://i.ibb.co/VpgBvC7/SWSKMSingle.png",
+        alt: "Kick Me Cover"
+      },
+      name: "Kick Me",
+      artists: "Sleeping with Sirens"
+    }
+  ];
+</script>
+
 <style>
   .container {
     margin-bottom: 8rem;
@@ -29,8 +70,8 @@
 
   .super-driver,
   .polaroid,
-  .sicker,
-  .women-colour {
+  .beachan,
+  .kick-me {
     padding: 0;
     box-shadow: -10px 10px #00c284;
     border-radius: 5px;
@@ -103,52 +144,16 @@
   <div class="together">
     <div class="names">
 
-      <div class="super-driver">
-        <img
-          class="images"
-          src="https://i.ibb.co/WWQRsds/1371186264-Booklet-01.jpg"
-          alt="Super Driver Cover" />
-        <p class="artists">
-          Super Driver
-          <span>Aya Hirano</span>
-        </p>
-      </div>
+      {#each songs as song}
+        <div class={song.class}>
+          <img class="images" src={song.image.src} alt={song.image.alt} />
+          <p class="artists">
+            {song.name}
+            <span>{song.artists}</span>
+          </p>
+        </div>
+      {/each}
 
-      <div class="polaroid">
-        <img
-          class="images"
-          src="https://i.ibb.co/TTb9kKq/fd98c51048e2baede0a40b3c60e73f58.jpg"
-          alt="Polaroid Cover" />
-        <p class="artists">
-          Polaroid
-          <span>Imagine Dragons</span>
-        </p>
-
-      </div>
-
-      <div class="sicker">
-        <img
-          class="images"
-          src="https://i.ibb.co/r3Hc560/81-MLV40y-J8-L-SS500.jpg"
-          alt="13th Floor album cover" />
-        <p class="artists">
-          Beachan-Robot
-          <span>Lady-Baby</span>
-        </p>
-
-      </div>
-
-      <div class="women-colour">
-        <img
-          class="images"
-          src="https://i.ibb.co/VpgBvC7/SWSKMSingle.png"
-          alt="Hyptonize album cover" />
-        <p class="artists">
-          Kick Me
-          <span>Sleeping with Sirens</span>
-        </p>
-
-      </div>
     </div>
   </div>
 </div>

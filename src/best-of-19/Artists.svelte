@@ -2,6 +2,41 @@
   import Summary from "./Summary.svelte";
   import Songs from "./Songs.svelte";
   import Podcasts from "./Podcasts.svelte";
+
+  export let artists = [
+    {
+      class: "post-malone",
+      image: {
+        src: "https://i.ibb.co/WyvRc52/download.jpg",
+        alt: "Hollywood's Bleeding Cover"
+      },
+      name: "Post Malone"
+    },
+    {
+      class: "laye",
+      image: {
+        src: "https://i.ibb.co/ykxWZjR/7645426.png",
+        alt: "Lonesome Album Cover"
+      },
+      name: "laye"
+    },
+    {
+      class: "haviah",
+      image: {
+        src: "https://i.ibb.co/LCQRJrH/haviah.jpg",
+        alt: "13th Floor Album Cover"
+      },
+      name: "Haviah Mighty"
+    },
+    {
+      class: "system-of",
+      image: {
+        src: "https://i.ibb.co/jkNbwNp/System-Of-A-Down-Hypnotize.jpg",
+        alt: "Hypnotize Album Cover"
+      },
+      name: "System of a Down"
+    }
+  ];
 </script>
 
 <style>
@@ -103,35 +138,14 @@
     <h2>Top Artists</h2>
   </div>
   <div class="together">
+
     <div class="names">
-      <div class="post-malone">
-        <img
-          class="images"
-          src="https://i.ibb.co/WyvRc52/download.jpg"
-          alt="Hollywoods Bleeding album cover" />
-        <p class="artists">Post Malone</p>
-      </div>
-      <div class="laye">
-        <img
-          class="images"
-          src="https://i.ibb.co/ykxWZjR/7645426.png"
-          alt="Lonesome album cover" />
-        <p class="artists">laye</p>
-      </div>
-      <div class="haviah">
-        <img
-          class="images"
-          src="https://i.ibb.co/LCQRJrH/haviah.jpg"
-          alt="13th Floor album cover" />
-        <p class="artists">Haviah Mighty</p>
-      </div>
-      <div class="system-of">
-        <img
-          class="images"
-          src="https://i.ibb.co/jkNbwNp/System-Of-A-Down-Hypnotize.jpg"
-          alt="Hyptonize album cover" />
-        <p class="artists">System of A Down</p>
-      </div>
+      {#each artists as artist}
+        <div class={artist.class}>
+          <img class="images" src={artist.image.src} alt={artist.image.alt} />
+          <p class="artists">{artist.name}</p>
+        </div>
+      {/each}
     </div>
   </div>
 
@@ -139,22 +153,3 @@
 
   <Podcasts />
 </div>
-
-<!-- If I somehow find a way to position everything with a loop. -->
-<!-- <div class="both">
-  <div class="container">
-    <Media heading>Top Artists of 2019</Media>
-    <div class="together">
-      <div class="image-part">
-        {#each images as { id }}
-          <img class="images" src="https://i.ibb.co/{id}" alt="album cover" />
-        {/each}
-      </div>
-      <div class="names">
-        {#each names as { name }}
-          <span class="artists">{name}</span>
-        {/each}
-      </div>
-    </div>
-  </div>
-</div> -->

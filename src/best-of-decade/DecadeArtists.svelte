@@ -1,6 +1,42 @@
 <script>
   import DecadeSongs from "./DecadeSongs.svelte";
   import DecadeBest from "./DecadeBest.svelte";
+
+  export let artists = [
+    {
+      class: "anime-project",
+      image: {
+        src:
+          "https://i.ibb.co/bdVKnt9/44f752b9d82dca1c8c10648699a5a419f5e1b23b.jpg",
+        alt: "Spotify Playlist Cover"
+      },
+      name: "Anime Project"
+    },
+    {
+      class: "kendrick",
+      image: {
+        src: "https://i.ibb.co/ykxQN9L/220px-Kendrick-Lamar-Damn.png",
+        alt: "Damn Album Cover"
+      },
+      name: "Kendrick Lamar"
+    },
+    {
+      class: "post-malone",
+      image: {
+        src: "https://i.ibb.co/WyvRc52/download.jpg",
+        alt: "Hollywood's Bleeding Album Cover"
+      },
+      name: "Post Malone"
+    },
+    {
+      class: "system-of",
+      image: {
+        src: "https://i.ibb.co/jkNbwNp/System-Of-A-Down-Hypnotize.jpg",
+        alt: "Hypnotize Album Cover"
+      },
+      name: "System of a Down"
+    }
+  ];
 </script>
 
 <style>
@@ -105,7 +141,15 @@
   </div>
   <div class="together">
     <div class="names">
-      <div class="anime-project">
+
+      {#each artists as artist}
+        <div class={artist.class}>
+          <img class="images" src={artist.image.src} alt={artist.image.alt} />
+          <p class="artists">{artist.name}</p>
+        </div>
+      {/each}
+
+      <!-- <div class="anime-project">
         <img
           class="images"
           src="https://i.ibb.co/bdVKnt9/44f752b9d82dca1c8c10648699a5a419f5e1b23b.jpg"
@@ -132,7 +176,7 @@
           src="https://i.ibb.co/WyvRc52/download.jpg"
           alt="Hollywoods Bleeding album cover" />
         <p class="artists">Post Malone</p>
-      </div>
+      </div> -->
     </div>
   </div>
 

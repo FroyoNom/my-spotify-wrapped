@@ -1,3 +1,42 @@
+<script>
+  export let podcasts = [
+    {
+      class: "tlpotl",
+      image: {
+        src: "https://i.ibb.co/MN9Rdbs/Last-Pod-logo.jpg",
+        alt: "Last Pod Cover"
+      },
+      name: "Last Podcast on the Left"
+    },
+    {
+      class: "serial-killers",
+      image: {
+        src:
+          "https://i.ibb.co/h1bTyXL/uploads-2-F1577907239282-z6z3288q1u-c17561d515fd89c85bda757d149bf1ee-2-Fserialkillers-logo-noeyes.jpg",
+        alt: "Serial Killers Cover"
+      },
+      name: "Serial Killers"
+    },
+    {
+      class: "indie",
+      image: {
+        src:
+          "https://i.ibb.co/0JfDH2w/d6332992cd3d807203c0c9c4a6734718899bc7b7.jpg",
+        alt: "IndieHackers Cover"
+      },
+      name: "The IndieHackers Podcast"
+    },
+    {
+      class: "no-sleep",
+      image: {
+        src: "https://i.ibb.co/87W9gWY/No-Sleep-Podcast-S4-Logo-1400.jpg",
+        alt: "The NoSleep Podcast Cover"
+      },
+      name: "The NoSleep Podcast"
+    }
+  ];
+</script>
+
 <style>
   .container {
     margin-bottom: 8rem;
@@ -40,7 +79,7 @@
     border-radius: 5px 5px 0 0;
   }
 
-  .artists {
+  .podcasts {
     color: #333;
     font-weight: 700;
     background: #fff;
@@ -96,53 +135,12 @@
   </div>
   <div class="together">
     <div class="names">
-      <div class="tlpotl">
-        <img
-          class="images"
-          src="https://i.ibb.co/MN9Rdbs/Last-Pod-logo.jpg"
-          alt="Hollywoods Bleeding album cover" />
-        <p class="artists">The Last Podcast on the Left</p>
-      </div>
-      <div class="serial-killers">
-        <img
-          class="images"
-          src="https://i.ibb.co/h1bTyXL/uploads-2-F1577907239282-z6z3288q1u-c17561d515fd89c85bda757d149bf1ee-2-Fserialkillers-logo-noeyes.jpg"
-          alt="Lonesome album cover" />
-        <p class="artists">Serial Killers</p>
-      </div>
-      <div class="indie">
-        <img
-          class="images"
-          src="https://i.ibb.co/0JfDH2w/d6332992cd3d807203c0c9c4a6734718899bc7b7.jpg"
-          alt="13th Floor album cover" />
-        <p class="artists">The IndieHackers Podcast</p>
-      </div>
-      <div class="no-sleep">
-        <img
-          class="images"
-          src="https://i.ibb.co/87W9gWY/No-Sleep-Podcast-S4-Logo-1400.jpg"
-          alt="Hyptonize album cover" />
-        <p class="artists">The NoSleep Podcast</p>
-      </div>
+      {#each podcasts as podcast}
+        <div class={podcast.class}>
+          <img class="images" src={podcast.image.src} alt={podcast.image.alt} />
+          <p class="podcasts">{podcast.name}</p>
+        </div>
+      {/each}
     </div>
   </div>
 </div>
-
-<!-- If I somehow find a way to position everything with a loop. -->
-<!-- <div class="both">
-  <div class="container">
-    <Media heading>Top Artists of 2019</Media>
-    <div class="together">
-      <div class="image-part">
-        {#each images as { id }}
-          <img class="images" src="https://i.ibb.co/{id}" alt="album cover" />
-        {/each}
-      </div>
-      <div class="names">
-        {#each names as { name }}
-          <span class="artists">{name}</span>
-        {/each}
-      </div>
-    </div>
-  </div>
-</div> -->

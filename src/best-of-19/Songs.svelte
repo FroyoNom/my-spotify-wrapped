@@ -1,3 +1,44 @@
+<script>
+  export let songs = [
+    {
+      class: "sunflower",
+      image: {
+        src: "https://i.ibb.co/30rMvzL/maxresdefault.jpg",
+        alt: "Sunflower Cover"
+      },
+      name: "Sunflower",
+      artists: "Post Malone (feat. Swae Lee)"
+    },
+    {
+      class: "sicker",
+      image: {
+        src: "https://i.ibb.co/2qgFmq3/maxresdefault-1.jpg",
+        alt: "Sicker Cover"
+      },
+      name: "Sicker",
+      artists: "laye"
+    },
+    {
+      class: "women-colour",
+      image: {
+        src: "https://i.ibb.co/Y3XsXnx/haviah-mighty-1200w-2.jpg",
+        alt: "13th Floor Album Cover"
+      },
+      name: "In Women Colour",
+      artists: "Haviah Mighty"
+    },
+    {
+      class: "summer-time",
+      image: {
+        src: "https://i.ibb.co/DzT1bgN/91b9b-N06-JQL-SS500.jpg",
+        alt: "Summer Time Cover"
+      },
+      name: "Summer Time",
+      artists: "Tish Hyman (feat. Kill Nigel)"
+    }
+  ];
+</script>
+
 <style>
   .container {
     margin-bottom: 8rem;
@@ -101,52 +142,16 @@
   <div class="together">
     <div class="names">
 
-      <div class="sunflower">
-        <img
-          class="images"
-          src="https://i.ibb.co/30rMvzL/maxresdefault.jpg"
-          alt="Sunflower Cover" />
-        <p class="artists">
-          Sunflower
-          <span>Post Malone (feat. Swae Lee)</span>
-        </p>
-      </div>
+      {#each songs as song}
+        <div class={song.class}>
+          <img class="images" src={song.image.src} alt={song.image.alt} />
+          <p class="artists">
+            {song.name}
+            <span>{song.artists}</span>
+          </p>
+        </div>
+      {/each}
 
-      <div class="summer-time">
-        <img
-          class="images"
-          src="https://i.ibb.co/DzT1bgN/91b9b-N06-JQL-SS500.jpg"
-          alt="Summer Time Cover" />
-        <p class="artists">
-          Summer Time
-          <span>Tish Hyman (feat. Kill Nigel)</span>
-        </p>
-
-      </div>
-
-      <div class="sicker">
-        <img
-          class="images"
-          src="https://i.ibb.co/2qgFmq3/maxresdefault-1.jpg"
-          alt="Sicker Cover" />
-        <p class="artists">
-          Sicker
-          <span>laye</span>
-        </p>
-
-      </div>
-
-      <div class="women-colour">
-        <img
-          class="images"
-          src="https://i.ibb.co/Y3XsXnx/haviah-mighty-1200w-2.jpg"
-          alt="13th Floor album cover" />
-        <p class="artists">
-          In Women Colour
-          <span>Haviah Mighty</span>
-        </p>
-
-      </div>
     </div>
   </div>
 </div>
